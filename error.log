@@ -1,7 +1,6 @@
-java.lang.NullPointerException: Cannot invoke "main.item.ItemCsv$ButtonColor.ordinal()" because the return value of "main.item.ItemCsv.getButtoncolorEnum()" is null
-	at main.main.CalendarMain.scheduleSetting(CalendarMain.java:477)
-	at main.main.CalendarMain.calenderSetting(CalendarMain.java:266)
-	at main.main.CalendarMain.main(CalendarMain.java:172)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:63)
+java.time.format.DateTimeParseException: Text 'リファクタリング' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:435)
+	at main.main.CalendarMain.readCSVFile(CalendarMain.java:600)
+	at main.main.CalendarMain.main(CalendarMain.java:171)

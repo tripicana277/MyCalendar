@@ -79,8 +79,7 @@ public class CalendarMain {
 		readPrmFile(itemServer);
 
 		// デフォルトフォント設定(メイリオ)
-		setUIFont(new javax.swing.plaf.FontUIResource(ItemFinal.FONT, Font.PLAIN, itemServer.fontSizeS),
-				itemServer);
+		setUIFont(new javax.swing.plaf.FontUIResource(ItemFinal.FONT, Font.PLAIN, itemServer.fontSizeS), itemServer);
 
 		// 全XMLファイルの読込
 		readAllXMLFiles(itemServer);
@@ -175,8 +174,6 @@ public class CalendarMain {
 		// フレームのパックと可視化
 		itemServer.frame.pack();
 		itemServer.frame.setVisible(true);
-
-		System.out.println("アプリケーションが起動しました。");
 	}
 
 	/**
@@ -526,16 +523,8 @@ public class CalendarMain {
 					.equals(LocalDate.now().format(DateTimeFormatter.ofPattern(ItemFinal.MONTH_FORMAT)))) {
 				// 現在の月の場合のみ
 				// countが現在の日付の日にちに対応するか確認
-				int today = LocalDate.now().getDayOfMonth();
-				int adjustedDay;
-				if (preSpace == ItemFinal.WEEK_MAX) {
-					// 月初が日曜の場合今日の日付と比較
-					adjustedDay = today;
-				} else {
-					// 月初が日曜の場合今日の日付に初日の曜日番号を加算して比較
-					adjustedDay = today + preSpace;
-				}
-				if (count == adjustedDay) {
+				if (count == (LocalDate.now().getDayOfMonth() + preSpace)) {
+
 					// 本日のボタンに枠線を設定（ダークレッド、太さ2ピクセル）
 					itemServer.objButton.setBorder(new LineBorder(ItemFinal.CUSTOM_DARK_RED, 2, true));
 				}
@@ -936,6 +925,7 @@ public class CalendarMain {
 	* @param itemServer ItemServerオブジェクト
 	* @param e 例外内容
 	*/
+	// 例外ダイアログを設定するメソッド
 	public static void exceptionDialogComponentSetting(ItemServer itemServer, Exception e) {
 
 		// 例外メッセージを表示するJLabelを作成

@@ -12,8 +12,8 @@ public class ItemFinal {
 	public static final String LARGE = "l"; // サイズ: 大
 	public static final String BLANK = ""; // 空文字列
 	public static final String COMMA = ","; // カンマ
-	public static final String NEWLINE = "\n"; // 改行
-	public static final String CUMMA_NEWLINE = ",|\n"; // カンマと改行
+	public static final String NEWLINE = "\r\n"; // 改行
+	public static final String CUMMA_NEWLINE = ",|\r\n"; // カンマと改行
 	public static final String COLON = ":"; // コロン	
 	public static final String HYPHEN = "-"; // ハイフン	
 	public static final String MONTH_FORMAT = "yyyy-MM-"; // 月のフォーマット

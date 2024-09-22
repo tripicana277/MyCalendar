@@ -1,0 +1,13 @@
+# コンパイルされたファイルを除外
+*.class
+
+# IDEの設定ファイルを除外
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+
+# ビルドフォルダを除外
+/target/
+/bin/

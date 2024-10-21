@@ -122,6 +122,18 @@ public class CalendarMain {
 			calenderSetting(true, itemServer);
 		});
 
+		
+		/**
+		* 来月のボタン
+		*/
+		JCustomButton buttonHelp = new JCustomButton(itemServer.getLocallocaleXml().getNextmonth());
+		buttonNext.addActionListener(e -> {
+			itemServer.date = itemServer.date.plusMonths(ItemFinal.HOUR_NEXT);
+			otherMonth(itemServer);
+			calenderSetting(true, itemServer);
+		});
+
+		
 		// 空白ラベルの設定(レイアウト上意図的に設定)
 		JLabel labelNext = new JLabel(ItemFinal.BLANK);
 		labelNext.setBackground(Color.WHITE);
